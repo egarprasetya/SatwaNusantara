@@ -1,0 +1,744 @@
+{
+  "dataAdmin" : {
+    "-LQ3rjM5qxmaGK-YYV8e" : {
+      "alamat" : "jl. surabaya 45",
+      "email" : "insanaleq@gmail.com",
+      "id" : "LwdwLmlyaXf5Bz2313q57Hw1Nor1",
+      "nama" : "aleq insan",
+      "telp" : "082446178357"
+    },
+    "-LfamquCJDQG1uJD0s1Q" : {
+      "alamat" : "jalan pb sudirman 2",
+      "email" : "adm@gmail.com",
+      "id" : "FPvcEVk4kgUZx6MeM5WIhhMY4033",
+      "nama" : "adm@gmail.com",
+      "telp" : "085282525725"
+    }
+  },
+  "dataBankSampah" : {
+    "0lobanksampah" : {
+      "alamat" : "jl. cepaka",
+      "email" : "bank@gmail.com",
+      "id" : "0loQuMwFa7fOD1vCmpEvzFrTV8J2",
+      "namaInstansi" : "banksampah",
+      "namaPemilik" : "bank sampah",
+      "telp" : "08394738"
+    },
+    "cvmerdekasejahterawx3" : {
+      "alamat" : "JL. Slamet Riyadi",
+      "id" : "WX30bK7EVbXO6jPSPBxfjrwBBiK2",
+      "namaInstansi" : "CV. Merdeka Sejahtera",
+      "namaPemilik" : "rendi",
+      "telp" : "0835527183"
+    },
+    "lodinsanpermata" : {
+      "alamat" : "jl. bengawan solo",
+      "email" : "insan@gmail.com",
+      "id" : "LODWpI1d8dYUqOROQfC6TbZiwan2",
+      "namaInstansi" : "insan permata",
+      "namaPemilik" : "aleq insan",
+      "telp" : "083443"
+    },
+    "nvizamfahguna" : {
+      "alamat" : "jl Kalimantan 11",
+      "email" : "bankku@gmail.com",
+      "id" : "nVIPKJvMIwZR2qaLlJyrxgoOOUL2",
+      "namaInstansi" : "zamfahguna",
+      "namaPemilik" : "bank zamfah",
+      "telp" : "0898989089809"
+    },
+    "v8dmandirisejahtera" : {
+      "alamat" : "jl. hadi wijaya",
+      "email" : "elva02@gmail.com",
+      "id" : "v8d1Fx90KcZVhdPDqQD3BRWvlFx1",
+      "namaInstansi" : "mandiri sejahtera",
+      "namaPemilik" : "elva",
+      "telp" : "083667227882"
+    },
+    "xbadesktop" : {
+      "alamat" : "desktop",
+      "email" : "desktop@gmail.com",
+      "id" : "XbAmvan4GedtRDNmhVK9l6ecBb02",
+      "namaInstansi" : "desktop",
+      "namaPemilik" : "desktop",
+      "telp" : ""
+    },
+    "xbemayacv" : {
+      "alamat" : "Jl. kalimantan 24 no 12",
+      "email" : "sejahtera@gmail.com",
+      "id" : "xBEPldBeEaMyfdmEgWB7ydaKIRr1",
+      "namaInstansi" : "Maya CV",
+      "namaPemilik" : "Sejahtera",
+      "telp" : "089896698852"
+    }
+  },
+  "dataHarga" : {
+    "dataAdmin" : {
+      "hargaBotolPlastik" : "500",
+      "hargaKertas" : "900"
+    }
+  },
+  "dataHargaSampah" : {
+    "dataAdmin" : {
+      "hargaBotolPlastik" : "3600",
+      "hargaKertas" : "950"
+    }
+  },
+  "dataLeaderboard" : {
+    "1OPjrWTGBPMTXtWKEL3ri1uYvqf1" : {
+      "desc" : "99999",
+      "nama" : "akun dami",
+      "poin" : "0",
+      "uid" : "1OPjrWTGBPMTXtWKEL3ri1uYvqf1"
+    },
+    "2XMEtOEs3LSoZ1R9LhAz2WNQdtB3" : {
+      "desc" : "99999",
+      "nama" : "pengguna",
+      "poin" : "0",
+      "poinB" : "0",
+      "uid" : "2XMEtOEs3LSoZ1R9LhAz2WNQdtB3"
+    },
+    "61NHgQKunNYDvl5sE01nuxytiVx2" : {
+      "desc" : "99711.0",
+      "nama" : "atta halilintar",
+      "poin" : "288.0",
+      "uid" : "61NHgQKunNYDvl5sE01nuxytiVx2"
+    },
+    "ALwWNA6wkSMVDYciglVHEIWsmCm1" : {
+      "desc" : "99999",
+      "nama" : "noor",
+      "poin" : "0",
+      "uid" : "ALwWNA6wkSMVDYciglVHEIWsmCm1"
+    },
+    "NTXZN9bxPHYmUuibmbShu13mBzy1" : {
+      "desc" : "99819.0",
+      "nama" : "Gerry Kasparov",
+      "poin" : "180.0",
+      "uid" : "NTXZN9bxPHYmUuibmbShu13mBzy1"
+    },
+    "Pckhg9H5t2dc5vewwgfFqnuAsfG2" : {
+      "desc" : "98046",
+      "nama" : "bratasena anggabayu bhirawa",
+      "poin" : "1953",
+      "poinB" : "1000",
+      "uid" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+    },
+    "S3eWg5Zt5aSJfUzs5CV0zJTET8J2" : {
+      "desc" : "99999",
+      "nama" : "basir caem",
+      "poin" : "0",
+      "uid" : "S3eWg5Zt5aSJfUzs5CV0zJTET8J2"
+    },
+    "VnVFn69g7RVtJ2ugnVYEcARz9wp2" : {
+      "desc" : "99999",
+      "nama" : "Vian Elfada Matzuhiko",
+      "poin" : "0",
+      "uid" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "fUNQzfj6lbQWFhHl1sB6qmU72Ht1" : {
+      "desc" : "99989",
+      "nama" : "Alif Rifky",
+      "poin" : "10",
+      "uid" : "fUNQzfj6lbQWFhHl1sB6qmU72Ht1"
+    },
+    "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2" : {
+      "desc" : "99999",
+      "nama" : "b",
+      "poin" : "0",
+      "poinB" : "0",
+      "uid" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2"
+    },
+    "zjm9vzeCxJcatPrTEeGWhMpl5K43" : {
+      "desc" : "99964",
+      "nama" : "buangkan",
+      "poin" : "36.0",
+      "uid" : "zjm9vzeCxJcatPrTEeGWhMpl5K43"
+    }
+  },
+  "dataMitra" : {
+    "-LQ9Tl2S0TOgM-1lDFnN" : {
+      "alamat" : "jl. soekarno",
+      "email" : "mitra@gmail.com",
+      "id" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "namaInstansi" : "mitraumkm",
+      "namaPemilik" : "mitra umkm",
+      "telp" : "03794682"
+    },
+    "-LQHF82XzDTAqrOHnLRT" : {
+      "alamat" : "jl. wijaya kusuma",
+      "email" : "aleq03@gmail.com",
+      "id" : "plSiAvkCn8NHbWIh48xFS1402lw1",
+      "namaInstansi" : "lebong",
+      "namaPemilik" : "Aleq insan",
+      "telp" : "083223571543"
+    },
+    "-L_8DrsFZMMfzFgdkUK7" : {
+      "alamat" : "Perum villa tegal besrar",
+      "email" : "warung@gmail.com",
+      "id" : "xcR3NFWdQxM8HF7T7amVrMOIzhO2",
+      "namaInstansi" : "waRoenk EndaH",
+      "namaPemilik" : "Endah Sutjiati",
+      "telp" : "08989012135"
+    },
+    "dummyID" : {
+      "alamat" : "Jl. Bengawan Solo",
+      "namaInstansi" : "Rumah Abadi",
+      "namaPemilik" : "Vian Santosan",
+      "telp" : "0893243",
+      "uidVolunteer" : "UID"
+    }
+  },
+  "dataPenjualan" : {
+    "-LQ3rDghsCAnEc0RThNH" : {
+      "jumlahPoin" : "10.0",
+      "namaInstansi" : "insan permata",
+      "namaPemilik" : "aleq insan",
+      "tanggalBeli" : "30-10-2018 19:04"
+    },
+    "-LZroeFW2nAMEK2XUsWA" : {
+      "jumlahPoin" : "40.0",
+      "namaInstansi" : "insan permata",
+      "namaPemilik" : "aleq insan",
+      "tanggalBeli" : "01-03-2019 12:55"
+    },
+    "-LZroueEtFwPVq1iuWoC" : {
+      "jumlahPoin" : "1040.0",
+      "namaInstansi" : "insan permata",
+      "namaPemilik" : "aleq insan",
+      "tanggalBeli" : "01-03-2019 12:56"
+    },
+    "dataDummy" : {
+      "jumlahPoin" : "40",
+      "namaInstansi" : "Cahaya Abadi",
+      "namaPemilik" : "Mukhtar",
+      "tanggalBeli" : "26-October-2018 15:40"
+    }
+  },
+  "dataPerusahaan" : {
+    "-LQ4nOuOPXn5kXMfC7ia" : {
+      "alamat" : "jl. suprapto",
+      "deskripsi" : "-",
+      "email" : "riki34@gmail.com",
+      "id" : "4MEgr6q3VVh4XPJXQmiNm2ey3AG2",
+      "namaInstansi" : "cv. sinar abadi",
+      "namaPemilik" : "riki",
+      "telp" : "089333679738"
+    },
+    "-LQ6Mc-ZSQ27e8ZwBJXC" : {
+      "alamat" : "jl. sumbersari no. 43",
+      "deskripsi" : "butuh uang",
+      "email" : "setiawan@gmail.com",
+      "id" : "Okv8ZuvGkOUNh77UrwDNrdNuGmE2",
+      "namaInstansi" : "cv. indah mandiri",
+      "namaPemilik" : "heru setiawan",
+      "telp" : "083556524321"
+    },
+    "-LQ9Txmmr_15P9y5lbuj" : {
+      "alamat" : "jl. cempaka",
+      "deskripsi" : "kubutuhan sampah kertas",
+      "email" : "perusahaan@gmail.com",
+      "id" : "BvIItxeSX8QAcAfiKl1xekkTeBD3",
+      "namaInstansi" : "perusahaan cv",
+      "namaPemilik" : "perusahaan",
+      "telp" : "2784639"
+    },
+    "-LQHEs3hZq0BQzMqltfD" : {
+      "alamat" : "jl. pakusari no. 15",
+      "deskripsi" : "kebutuhan banyak sampah botol plastik",
+      "email" : "brata04@gmail.com",
+      "id" : "FepDie9VfOX9bAcyTK353nasZ5R2",
+      "namaInstansi" : "cv. indah mandiri",
+      "namaPemilik" : "brata",
+      "telp" : "082332581431"
+    }
+  },
+  "dataPoin" : {
+    "-LQ4T1Sfb_Kl7qOH5JgL" : {
+      "dari" : "insan permata",
+      "poin" : "85.5",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "tQJfD1YItPhJgYb5g8rJkr8jSyk2"
+    },
+    "-LQ4WqUdSQHBvbfQn1o6" : {
+      "dari" : "insan permata",
+      "poin" : "76.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "8z7kDS3ANTVV06xqwHYmMC7ZjNm1"
+    },
+    "-LQ4lKIJVZyGCVzv32IF" : {
+      "dari" : "insan permata",
+      "poin" : "180.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "y8EyMeBmVDUQraaU3m7uVKfJufr2"
+    },
+    "-LQ4mXq0IGRD0prkXObm" : {
+      "dari" : "insan permata",
+      "poin" : "38.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "32lLYYuOoyUDLuZDj2aABbk3q9j2"
+    },
+    "-L_7keXfinkDK1wmZ69j" : {
+      "dari" : "zamfahguna",
+      "poin" : "360.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "dmc5qFr1mjSutj0XqNbAUJdORcr2"
+    },
+    "-L_fQQ5hJU76bqwlMD9b" : {
+      "dari" : "Maya CV",
+      "poin" : "288.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "-L_fRO_eHNa9FL8ZdT-6" : {
+      "dari" : "Maya CV",
+      "poin" : "288.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "-L_fSX918pkwB0o5M9oL" : {
+      "dari" : "Maya CV",
+      "poin" : "324.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "-L_fT0TPztCZQ03bm64t" : {
+      "dari" : "Maya CV",
+      "poin" : "288.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "-L_fU4USYMfwvCbw-f41" : {
+      "dari" : "Maya CV",
+      "poin" : "288.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "-L_fUXxwkgV6IqfsAc7W" : {
+      "dari" : "Maya CV",
+      "poin" : "216.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "-L_fWX44lrYiXpAS25J_" : {
+      "dari" : "Maya CV",
+      "poin" : "288.0",
+      "sumber" : "verifikasi sampah",
+      "uidVolunteer" : "VnVFn69g7RVtJ2ugnVYEcARz9wp2"
+    },
+    "Pckhg9H5t2dc5vewwgfFqnuAsfG2" : {
+      "-Lcy959aOv1fFIWgEjqp" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-LcyJfcdq7NcVugKrRfs" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-LcyJkR33p2mWvZgwi6L" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-LcyKNAhSFsH8iOZXhOW" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-LcyTSw05wTnZQcTGljU" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-Lcyf4eGhVr-b8SzkScK" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-LdWkWo3IYHECBh1U3_b" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "50",
+        "sumber" : "tas",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-Lfbhpk4u9kZcb8dO16F" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "50",
+        "sumber" : "tas",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "-LhDynfbX8o4jfqFmhem" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "PC21 04 2019 12 51 19" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      },
+      "PC21 04 2019 12 54 42" : {
+        "dari" : "dariBeliVoucher",
+        "poin" : "200",
+        "sumber" : "seblak",
+        "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2"
+      }
+    },
+    "dummyID" : {
+      "dari" : "verifikasi sampah",
+      "poin" : "20",
+      "sumber" : "UD. Sinar Cahaya",
+      "uidVolunteer" : "123456"
+    }
+  },
+  "dataSampah" : {
+    "2XM15082019162726" : {
+      "beratSampah" : "-",
+      "hargaSampah" : "-",
+      "jenisSampah" : "-",
+      "kodeSampah" : "2XM15082019162726",
+      "namaVolunteer" : "b",
+      "poinSampah" : "0",
+      "statusVerifikasi" : "Menunggu",
+      "tanggalAkhir" : "-",
+      "tanggalSubmit" : "-",
+      "uidBank" : "-",
+      "uidVolunteer" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "urlFoto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/sampah_volunteer%2F2XM15082019162726?alt=media&token=ba11dd75-d143-4f0a-8437-1c1a40b60dc1"
+    },
+    "PCK13062019105712" : {
+      "beratSampah" : "-",
+      "hargaSampah" : "-",
+      "jenisSampah" : "-",
+      "kodeSampah" : "PCK13062019105712",
+      "namaVolunteer" : "b",
+      "poinSampah" : "0",
+      "statusVerifikasi" : "Menunggu",
+      "tanggalAkhir" : "-",
+      "tanggalSubmit" : "-",
+      "uidBank" : "-",
+      "uidVolunteer" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "urlFoto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/sampah_volunteer%2FPCK13062019105712?alt=media&token=cec9aca2-3d1b-4476-b065-b6b559b2cead"
+    },
+    "PCK16052019060406" : {
+      "beratSampah" : "100",
+      "hargaSampah" : "-",
+      "jenisSampah" : "Kertas",
+      "kodeSampah" : "PCK16052019060406",
+      "namaVolunteer" : "b",
+      "poinSampah" : "900",
+      "statusVerifikasi" : "Diterima",
+      "tanggalAkhir" : "-",
+      "tanggalSubmit" : "200519-10:42",
+      "uidBank" : "xBEPldBeEaMyfdmEgWB7ydaKIRr1",
+      "uidVolunteer" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "urlFoto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/sampah_volunteer%2FPCK16052019060406?alt=media&token=565c3b60-993a-4ccc-977e-a528dc7124d3"
+    },
+    "PCK16052019060653" : {
+      "beratSampah" : "50",
+      "hargaSampah" : "-",
+      "jenisSampah" : "Plastik",
+      "kodeSampah" : "PCK16052019060653",
+      "namaVolunteer" : "b",
+      "poinSampah" : "50",
+      "statusVerifikasi" : "Diterima",
+      "tanggalAkhir" : "-",
+      "tanggalSubmit" : "200519-10:44",
+      "uidBank" : "xBEPldBeEaMyfdmEgWB7ydaKIRr1",
+      "uidVolunteer" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "urlFoto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/sampah_volunteer%2FPCK16052019060653?alt=media&token=1aea6c98-9d24-4850-a6c3-c58ad8cf37d8"
+    },
+    "PCK19062019150159" : {
+      "beratSampah" : "-",
+      "hargaSampah" : "-",
+      "jenisSampah" : "-",
+      "kodeSampah" : "PCK19062019150159",
+      "namaVolunteer" : "b",
+      "poinSampah" : "0",
+      "statusVerifikasi" : "Menunggu",
+      "tanggalAkhir" : "-",
+      "tanggalSubmit" : "-",
+      "uidBank" : "-",
+      "uidVolunteer" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "urlFoto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/sampah_volunteer%2FPCK19062019150159?alt=media&token=45dad33c-e38b-4b60-b6af-76eae03c3696"
+    },
+    "PCK27052019111839" : {
+      "beratSampah" : "30",
+      "hargaSampah" : "",
+      "jenisSampah" : "Plastik",
+      "kodeSampah" : "PCK27052019111839",
+      "namaVolunteer" : "b",
+      "poinSampah" : "30",
+      "statusVerifikasi" : "Diterima",
+      "tanggalAkhir" : "-",
+      "tanggalSubmit" : "270519-11:20",
+      "uidBank" : "xBEPldBeEaMyfdmEgWB7ydaKIRr1",
+      "uidVolunteer" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "urlFoto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/sampah_volunteer%2FPCK27052019111839?alt=media&token=32c23704-9d2f-491d-b884-3150647210ed"
+    }
+  },
+  "dataVolunteer" : {
+    "2XMEtOEs3LSoZ1R9LhAz2WNQdtB3" : {
+      "email" : "pengguna@gmail.com",
+      "id" : "2XMEtOEs3LSoZ1R9LhAz2WNQdtB3",
+      "nama" : "pengguna",
+      "poin" : "0"
+    },
+    "61NHgQKunNYDvl5sE01nuxytiVx2" : {
+      "email" : "atta@gmail.com",
+      "id" : "61NHgQKunNYDvl5sE01nuxytiVx2",
+      "nama" : "atta halilintar",
+      "poin" : "108"
+    },
+    "ALwWNA6wkSMVDYciglVHEIWsmCm1" : {
+      "email" : "noor@gmail.com",
+      "id" : "ALwWNA6wkSMVDYciglVHEIWsmCm1",
+      "nama" : "noor",
+      "poin" : "0"
+    },
+    "NTXZN9bxPHYmUuibmbShu13mBzy1" : {
+      "email" : "garry@gmail.com",
+      "id" : "NTXZN9bxPHYmUuibmbShu13mBzy1",
+      "nama" : "Gerry Kasparov",
+      "poin" : "180"
+    },
+    "Pckhg9H5t2dc5vewwgfFqnuAsfG2" : {
+      "email" : "bratasena@gmail.com",
+      "id" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "nama" : "bratasena anggabayu bhirawa",
+      "poin" : "1753"
+    },
+    "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2" : {
+      "email" : "b@gmail.com",
+      "id" : "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2",
+      "nama" : "b",
+      "poin" : "0"
+    },
+    "zjm9vzeCxJcatPrTEeGWhMpl5K43" : {
+      "email" : "buangin@gmail.com",
+      "id" : "zjm9vzeCxJcatPrTEeGWhMpl5K43",
+      "nama" : "buangkan",
+      "poin" : "36.0"
+    }
+  },
+  "dataVoucher" : {
+    "12042019155036" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "jumlahKuota" : "2",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "berlaku",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "12042019155039" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "jumlahKuota" : "8",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "berlaku",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=3a9af28a-d7fe-4f97-8323-4d8c72a44004"
+    },
+    "28042019092405" : {
+      "deskripsi" : "pembelian tas kcil",
+      "hargaPoin" : "50",
+      "jumlahKuota" : "0",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "tas",
+      "statusVoucher" : "berlaku",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F184236?alt=media&token=47bb079a-0012-4780-b5fb-412b92557571"
+    }
+  },
+  "hargaSampah" : {
+    "hargaKertas" : "900",
+    "hargaPlastik" : "100",
+    "kertas" : "hargaKertas",
+    "plastik" : "hargaPlastik"
+  },
+  "pengajuan" : {
+    "lwGMYsGWjJc3Q5ZSRAae5QYrW823213" : {
+      "-LoL7fKMBMmg9s1VrBVGfff" : {
+        "alamat" : "a",
+        "formattedDate" : "1",
+        "jumlahSapi" : "3",
+        "namaPeternak" : "a",
+        "noHp" : "3",
+        "noKtp" : "1",
+        "urlDownload" : "xxxxx",
+        "username" : "a"
+      }
+    }
+  },
+  "pengguna" : {
+    "lwGMYsGWjJc3Q5ZSRAae5QYrW8U2" : {
+      "-LoL7fKMBMmg9s1VrBVG" : {
+        "email" : "b@gmail.com",
+        "level" : "volunteer",
+        "nama" : "b",
+        "poin" : "0"
+      }
+    }
+  },
+  "poin" : {
+    "poin" : "0"
+  },
+  "voucherVolunteer" : {
+    "-LQEWxwLh-8YmUww0w80" : {
+      "deskripsi" : "kitab harga makanan",
+      "hargaPoin" : "20",
+      "kodeVoucher" : "gQC6it48232",
+      "namaMitra" : "Broto",
+      "namaVolunteer" : "bratassss",
+      "namaVoucher" : "Seblak",
+      "statusVoucher" : "Sudah Ditukar",
+      "tanggal" : "12-04-2019 17:50:21",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F269728?alt=media&token=2bba40c7-1434-4fbf-b2a4-6e1a39a569cf"
+    },
+    "-Lcy82F3XnkQVbQh4ufJ" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck2567",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "-Lcy954--cslFwR1-7JB" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck2938",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "-LcyJfY-MMoWpvtDQo_k" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck1628",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "-LcyJkLevHGQ70bfBqTl" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck1697",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=3a9af28a-d7fe-4f97-8323-4d8c72a44004"
+    },
+    "-LcyKN67xt7YMrKRegiK" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck1982",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "-LcyRimHB-jWSUcnB5wu" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck5168",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "-LcySVX0Wp5ieGmevM6I" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "074Pck5444",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=3a9af28a-d7fe-4f97-8323-4d8c72a44004"
+    },
+    "PC13062019105655" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "PC13062019105655",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "PC21042019135402" : {
+      "deskripsi" : "seblak abah baru",
+      "hargaPoin" : "200",
+      "kodeVoucher" : "PC21042019135402",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "seblak",
+      "statusVoucher" : "Sudah Ditukar",
+      "tanggal" : "21:04:2019 14:14:04",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F167342?alt=media&token=6cc566b5-9d87-4469-9c3e-d076937425bd"
+    },
+    "PC24052019094153" : {
+      "deskripsi" : "pembelian tas kcil",
+      "hargaPoin" : "50",
+      "kodeVoucher" : "PC24052019094153",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "tas",
+      "statusVoucher" : "dibeli",
+      "tanggal" : "",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F184236?alt=media&token=47bb079a-0012-4780-b5fb-412b92557571"
+    },
+    "PC28042019092431" : {
+      "deskripsi" : "pembelian tas kcil",
+      "hargaPoin" : "50",
+      "kodeVoucher" : "PC28042019092431",
+      "namaMitra" : "mitra umkm",
+      "namaVoucher" : "tas",
+      "statusVoucher" : "Sudah Ditukar",
+      "tanggal" : "28:04:2019 09:30:28",
+      "uidMitra" : "074HqMvNQyNPQWHU4gQ2rpgLmJ52",
+      "uidVolunteer" : "Pckhg9H5t2dc5vewwgfFqnuAsfG2",
+      "url_foto" : "https://firebasestorage.googleapis.com/v0/b/buang-in.appspot.com/o/voucher_mitra%2F184236?alt=media&token=47bb079a-0012-4780-b5fb-412b92557571"
+    }
+  }
+}

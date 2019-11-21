@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_home_volunteer">HomeVolunteer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="jenis">
+        <item>limosin</item>
+        <item>jawa</item>
+        <item>cek</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_home_mitra">HomeMitra</string>
+
+    <!--judul tab-->
+</resources>

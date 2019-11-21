@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "809965540980",
+    "firebase_url": "https://satwanusantara.firebaseio.com",
+    "project_id": "satwanusantara",
+    "storage_bucket": "satwanusantara.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809965540980:android:f8bbaf9884c87ade592321",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809965540980-uib5svaa0mufhjt1cmnnuv5b21gj7q9g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "656ccc82a2e48c5edeef3d14a1ccb5313ef10595"
+          }
+        },
+        {
+          "client_id": "809965540980-id88b3g1tm0r0hk4tuphh14dl335r423.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgxlZMH_VoB4Dw45S-HI6t8PsH07EuMw0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809965540980-id88b3g1tm0r0hk4tuphh14dl335r423.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

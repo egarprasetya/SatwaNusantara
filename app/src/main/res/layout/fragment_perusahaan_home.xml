@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.Perusahaan.HomeFragment">
+o   <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appbar_infopoin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/warnaPutih"
+    android:gravity="center"
+    app:elevation="0dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/warnaUtama">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="80dp"-->
+            <!--android:background="@drawable/style_lingkaran"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/foto_profil" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/infopoin_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Volunteer"
+                    android:textColor="@color/warnaPutih"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/infopoin_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/warnaPutih"
+                    android:textSize="16sp"
+                    android:textStyle="italic|bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:text="Jumlah Sapi : "
+                        android:textColor="@color/warnaPutih"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/infopoin_poin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/warnaPutih"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ekor"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/warnaPutih"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar_infopoin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/promo_perusahaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/iklan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Jagalah kelestarian bumi kita"
+                    android:textAlignment="center"
+                    android:textColor="@color/warnaUtama"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_dataPengajuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/promo_perusahaan"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_perusahaan_sampah" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:text="Data Pribadi"
+                        android:textColor="@color/warnaUtama"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_dataSapi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_dataPengajuan"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_perusahaan_sampah" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="8dp"
+                        android:text="Data Sapi"
+                        android:textColor="@color/warnaUtama"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

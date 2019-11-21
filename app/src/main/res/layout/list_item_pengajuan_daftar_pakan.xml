@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar Pakan"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/perusahaan_text_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="deskripsi"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Stok Konsentrat"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/daftar_pakan_stok_konsen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Stok Silase Jagung"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/daftar_pakan_stok_jagung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Stok Silase Jerami"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=":"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/daftar_pakan_stok_jerami"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Daftar Pakan"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/perusahaan_text_deskripsi"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="deskripsi"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="italic" />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="170dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Stok Konsentrat"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text=":"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/daftar_pakan_stok_konsen"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="18dp"-->
+<!--                    android:textSize="18sp" />-->
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="170dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Stok Silase Jagung"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text=":"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/daftar_pakan_stok_jagung"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="18dp"-->
+<!--                    android:textSize="18sp" />-->
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="170dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Stok Silase Jerami"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text=":"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/daftar_pakan_stok_jerami"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="18dp"-->
+<!--                    android:textSize="18sp" />-->
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+<!--    &lt;!&ndash;    <com.google.android.material.floatingactionbutton.FloatingActionButton&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/perusahaan_btn_ubah"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_alignParentRight="true"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_alignParentBottom="true"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginRight="8dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_marginBottom="32dp"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:backgroundTint="@color/warnaKuning"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:foreground="?android:attr/actionBarItemBackground"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:src="@drawable/ic_ubah"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:visibility="visible"&ndash;&gt;-->
+<!--    &lt;!&ndash;        app:backgroundTint="@color/warnaKuning" />&ndash;&gt;-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/perusahaan_btn_simpan"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginRight="8dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:layout_toLeftOf="@id/perusahaan_btn_batal"-->
+<!--        android:backgroundTint="@color/warnaUtama"-->
+<!--        android:foreground="?android:attr/actionBarItemBackground"-->
+<!--        android:src="@drawable/ic_simpan"-->
+<!--        android:visibility="gone"-->
+<!--        app:backgroundTint="@color/warnaUtama" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/perusahaan_btn_batal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginRight="8dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:backgroundTint="@color/warnaKuning"-->
+<!--        android:foreground="?android:attr/actionBarItemBackground"-->
+<!--        android:src="@drawable/ic_batal"-->
+<!--        android:visibility="gone"-->
+<!--        app:backgroundTint="@color/warnaKuning" />-->
+
+<!--</RelativeLayout>-->

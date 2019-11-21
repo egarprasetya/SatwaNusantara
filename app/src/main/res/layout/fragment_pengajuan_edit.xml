@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.Pengajuan.MemasukanPengajuan">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/foto_pengajuan_fotoKtp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_img_voucher" />
+            <Button
+                android:id="@+id/upload_pengajuan_fotoKtp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/warnaUtama"
+                android:text="Upload"
+                android:textAllCaps="false"
+                android:textColor="@color/warnaPutih" />
+
+            <EditText
+                android:id="@+id/input_pengajuan_namaPeternak"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Peternak"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/input_pengajuan_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username Peternak"
+                android:inputType="text"
+                android:maxLines="5" />
+
+            <EditText
+                android:id="@+id/input_pengajuan_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Alamat"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/input_pengajuan_noKtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor KTP"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/input_pengajuan_jumlahSapi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jumlah Sapi"
+                android:inputType="number" />
+            <EditText
+                android:id="@+id/input_pengajuan_noHp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nomor HandPhone"
+                android:inputType="number" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:paddingBottom="100dp">
+
+                <Button
+                    android:id="@+id/btn_submit_sapi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/warnaUtama"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/warnaPutih" />
+
+                <Button
+                    android:id="@+id/btn_voucher_batal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="16dp"
+                    android:background="@color/warnaKuning"
+                    android:text="Batal"
+                    android:textAllCaps="false"
+                    android:textColor="@color/warnaPutih" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

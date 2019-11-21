@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.Pengajuan.MemasukkanDataSapi2">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_infopoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/warnaPutih"
+        android:gravity="center"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/warnaUtama">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:background="@drawable/style_lingkaran"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/foto_profil" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/memasukan_data_sapi_nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Volunteer"
+                        android:textColor="@color/warnaPutih"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:text="Sapi Ke          : "
+                            android:textColor="@color/warnaPutih"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/info_nomor_sapi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/warnaPutih"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text=""
+                            android:textColor="@color/warnaPutih"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="5dp"
+                            android:text="Jumlah Sapi : "
+                            android:textColor="@color/warnaPutih"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/memasukan_data_sapi_jumlah"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:textColor="@color/warnaPutih"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appbar_infopoin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:text="Data Sapi"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:text="Berat Awal Sapi"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/memasukan_data_sapi_berat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kilogram"
+                android:inputType="text"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:text="Jenis Sapi"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/input_pengajuan_jenis_sapi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:entries="@array/jenis"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
+
+            <!--            </ExpandableListIte>-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="15dp"
+                android:text="Jenis Kelamin"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="JANTAN"
+                    android:textColor="@color/warnaGelap"
+                    android:textSize="17sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/input_pengajuan_jenis_kelamin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                </androidx.appcompat.widget.SwitchCompat>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="BETINA"
+                    android:textColor="@color/warnaKuning"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:paddingBottom="100dp">
+
+                <Button
+                    android:id="@+id/btn_submit_sapi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/warnaUtama"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/warnaPutih" />
+
+
+                <Button
+                    android:id="@+id/btn_voucher_batal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="16dp"
+                    android:background="@color/warnaKuning"
+                    android:text="Batal"
+                    android:textAllCaps="false"
+                    android:textColor="@color/warnaPutih" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

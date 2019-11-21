@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/volunteer_gambar_sampah"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_img_voucher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/volunteer_Nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/volunteer_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/volunteer_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="No HP"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/volunteer_hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:text="Jml Sapi"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/volunteer_jml_sapi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pengajuan_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/promo_volunteer"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/detail_cok"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/warnaUtama"
+                            android:gravity="center"
+                            android:paddingLeft="0dp"
+                            android:text="Input Data Sapi"
+                            android:textColor="@color/warnaPutih"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <!--                <Button-->
+                <!--                    android:id="@+id/pengajuan_detail"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="25dp"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:background="@color/warnaUtama"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:text="Detail Data Sapi"-->
+                <!--                    android:textAlignment="center"-->
+                <!--                    android:textColor="@color/warnaPutih"-->
+                <!--                    android:textSize="16sp" />-->
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
