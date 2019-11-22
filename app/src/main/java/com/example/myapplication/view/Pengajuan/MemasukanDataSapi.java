@@ -107,7 +107,6 @@ public class MemasukanDataSapi extends AppCompatActivity {
 //        jumlahSapi = findViewById(R.id.memasukan_data_sapi_jumlah);
         nomorSapi = findViewById(R.id.input_pengajuan_noHp);
 
-        fotoKtp = findViewById(R.id.foto_pengajuan_fotoKtp);
 
         batal = findViewById(R.id.btn_voucher_batal);
         tambah = findViewById(R.id.btn_submit_sapi);
@@ -149,8 +148,6 @@ public class MemasukanDataSapi extends AppCompatActivity {
                     if (model.getUsername() != null) {
                         if (model.getUsername().equalsIgnoreCase(emailUser)) {
 
-                            System.out.println("bisacoyyyyyyyyyyyyyyyyyyyyyyyy" + model.getUsername());
-//                        modelList.add(model);
                             namaPeternak.setText(model.getNamaPeternak());
                             namaPeternak1 = model.getNamaPeternak();
                             jumlahSapi.setText(model.getJumlahSapi());
@@ -183,17 +180,7 @@ public class MemasukanDataSapi extends AppCompatActivity {
             }
         });
 
-        fotoKtp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(getParent(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL);
-                    startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE);
-                } else {
-                    startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE);
-                }
-            }
-        });
+
 
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override

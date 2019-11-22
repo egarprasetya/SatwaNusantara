@@ -27,7 +27,6 @@ public class TabSapiJantan extends Fragment {
     private RecyclerView recyclerView;
     private p_ubahHarga_adapter adapter;
     private List<ModelDataSapi> modelList;
-
     private FirebaseDatabase database;
     private DatabaseReference reference;
 

@@ -52,6 +52,7 @@
         <activity android:name=".view.Perusahaan.HomePerusahaan" />
         <activity android:name=".view.Pengajuan.coba" />
         <activity android:name=".view.Pengajuan.MemasukanDataSapi" />
+        <activity android:name=".view.Pengajuan.LihatDataSapi" />
         <service android:name="org.eclipse.paho.android.service.MqttService" >
         </service>
     </application>

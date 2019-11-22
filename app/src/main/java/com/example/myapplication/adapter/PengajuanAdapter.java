@@ -1,19 +1,31 @@
 package com.example.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
+import com.example.myapplication.model.ModelDataSapi;
 import com.example.myapplication.model.ModelPengajuan;
-import com.example.myapplication.model.ModelVoucher;
+import com.example.myapplication.view.Pengajuan.LihatDataSapi;
+import com.example.myapplication.view.Pengajuan.LihatPengajuan;
+import com.example.myapplication.view.Pengajuan.MemasukkanDataSapi2;
+import com.example.myapplication.view.Perusahaan.TabSapiBetina;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -26,10 +38,9 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
     public interface OnItemClickListener {
         void onItemClick(ModelPengajuan model);
     }
-    private OnItemClickListener listenerDetailCok;
+    private OnItemClickListener listenerDetail;
 
-    public PengajuanAdapter(Context context, List<ModelPengajuan> listVoucher, OnItemClickListener listener) {
-        this.listenerDetailCok = listener;
+    public PengajuanAdapter(Context context, List<ModelPengajuan> listVoucher) {
         this.pengajuanList = listVoucher;
         this.context = context;
     }
@@ -43,7 +54,7 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.bind(pengajuanList.get(position), listenerDetailCok);
+        holder.bind(pengajuanList.get(position), listenerDetail);
 //        ModelPengajuan model = pengajuanList.get(position);
     }
 
@@ -59,7 +70,9 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
         public TextView noHp;
         public TextView jumlahSapi;
         public ImageView foto;
-        private TextView detailCok;
+        private TextView detailData;
+         FirebaseDatabase database;
+        DatabaseReference reference;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -68,11 +81,10 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
             tanggalPengajuan = itemView.findViewById(R.id.volunteer_tanggal);
             noHp = itemView.findViewById(R.id.volunteer_hp);
             jumlahSapi = itemView.findViewById(R.id.volunteer_jml_sapi);
-            //nganter ibunku sek
 
             foto = itemView.findViewById(R.id.volunteer_gambar_sampah);
 
-            detailCok = itemView.findViewById(R.id.detail_cok);
+            detailData = itemView.findViewById(R.id.detail_cok);
         }
 
         public void bind(final ModelPengajuan model, final OnItemClickListener listener) {
@@ -82,13 +94,51 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
             noHp.setText(model.getNoHp());
             jumlahSapi.setText(model.getJumlahSapi());
             Glide.with(context).load(model.getUrlFoto()).into(foto);
-
-            detailCok.setOnClickListener(new View.OnClickListener() {
+            database = FirebaseDatabase.getInstance();
+            reference = database.getReference("dataSapi");
+            reference.addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onClick(View view) {
-                    listener.onItemClick(model);
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        ModelDataSapi model1 = dataSnapshot1.getValue(ModelDataSapi.class);
+                        if(model1.getNomorSapi().equalsIgnoreCase(model.getJumlahSapi()) && model1.getNamaPeternak().equalsIgnoreCase(model.getNamaPeternak()))
+                        {
+                            detailData.setText("Lihat Data Sapi");
+                            detailData.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent data = new Intent(context.getApplicationContext(), LihatDataSapi.class);
+                                    data.putExtra("NamaPeternak", model.getNamaPeternak());
+                                    data.putExtra("jumlahSapi", model.getJumlahSapi());
+                                    data.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    context.getApplicationContext().startActivity(data);
+                                }
+                            });
+                            break;
+                        }
+                        else
+                        {
+                            detailData.setText("Tambah Data Sapi");
+                            detailData.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent data = new Intent(context.getApplicationContext(), MemasukkanDataSapi2.class);
+                                    data.putExtra("NamaPeternak", model.getNamaPeternak());
+                                    data.putExtra("jumlahSapi", model.getJumlahSapi());
+                                    data.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    context.getApplicationContext().startActivity(data);
+                                }
+                            });
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
                 }
             });
+
 
 //            itemView.setOnClickListener(new View.OnClickListener() {
 //                @Override

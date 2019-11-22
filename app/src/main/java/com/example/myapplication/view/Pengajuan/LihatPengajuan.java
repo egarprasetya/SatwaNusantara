@@ -119,15 +119,7 @@ public class LihatPengajuan extends Fragment {
 
         getSampah();
         model = new ArrayList<>();
-        pengajuanAdapter = new PengajuanAdapter(getContext(), model, new PengajuanAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(ModelPengajuan model) {
-                Intent asu = new Intent(getActivity(), MemasukkanDataSapi2.class);
-                asu.putExtra("NamaPeternak", model.getNamaPeternak());
-                asu.putExtra("jumlahSapi", model.getJumlahSapi());
-                getActivity().startActivity(asu);
-            }
-        });
+        pengajuanAdapter = new PengajuanAdapter(getContext(), model);
         rvSampah.setLayoutManager(new LinearLayoutManager(getContext()));
         rvSampah.setAdapter(pengajuanAdapter);
         View rootView = inflater.inflate(R.layout.list_item_pengajuan_lihat, container, false);
