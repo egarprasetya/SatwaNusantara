@@ -50,6 +50,7 @@
             android:label="@string/title_activity_home_mitra"
             android:theme="@style/AppTheme" />
         <activity android:name=".view.Perusahaan.HomePerusahaan" />
+        <activity android:name=".view.HalamanDaftarTelepon" />
         <activity android:name=".view.Pengajuan.coba" />
         <activity android:name=".view.Pengajuan.MemasukanDataSapi" />
         <activity android:name=".view.Pengajuan.LihatDataSapi" />

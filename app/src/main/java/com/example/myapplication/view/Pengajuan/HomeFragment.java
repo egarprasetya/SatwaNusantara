@@ -82,21 +82,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        listMenu = rootView.findViewById(R.id.daftar_utama_volunteer);
-//        List<DaftarMenu> menu = new ArrayList<>();
-//        menu.add(new DaftarMenu(0, "Sampahku", R.drawable.ic_delete_black_24dp));
-//        menu.add(new DaftarMenu(1, "Info Poin", R.drawable.ic_attach_money_black_24dp));
-//        menu.add(new DaftarMenu(2, "Bank ModelSampah", R.drawable.ic_history_black_24dp));
-//
-//        DaftarMenuAdapter adapter = new DaftarMenuAdapter(getActivity(), menu);
-//        listMenu.setAdapter(adapter);
-//
-//        listMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                mCallback.onMenuSelected(position);
-//            }
-//        });
 
         return rootView;
     }

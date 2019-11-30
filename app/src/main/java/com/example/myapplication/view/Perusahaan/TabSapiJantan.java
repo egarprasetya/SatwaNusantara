@@ -36,6 +36,7 @@ public class TabSapiJantan extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sapi_tab_jantan, container, false);
+        final String nama = getArguments().getString("namaPeternak");
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("dataSapi");
@@ -51,8 +52,14 @@ public class TabSapiJantan extends Fragment {
                     String namaPeternak = model.getNamaPeternak();
                     String nomorSapi = model.getNomorSapi();
                     model = new ModelDataSapi( beratAwal, jenisSapi,jenisKelamin, namaPeternak, nomorSapi);
-                    if(model.getJenisKelamin().equalsIgnoreCase("jantan")){
-                        modelList.add(model);
+                    if(model.getJenisKelamin()!=null) {
+                        if(model.getNamaPeternak().equalsIgnoreCase(nama))
+                        {
+                            if(model.getJenisKelamin().equalsIgnoreCase("jantan")) {
+                                modelList.add(model);
+                            }
+                        }
+
                     }
                 }
                 adapter.notifyDataSetChanged();

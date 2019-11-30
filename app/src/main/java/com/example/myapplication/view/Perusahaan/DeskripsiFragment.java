@@ -24,7 +24,11 @@ public class DeskripsiFragment extends Fragment {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser;
+    String namaPeternak;
+    public DeskripsiFragment(String nama) {
+        namaPeternak = nama;
 
+    }
     public DeskripsiFragment() {
 
     }
@@ -38,7 +42,10 @@ public class DeskripsiFragment extends Fragment {
         viewPager = view.findViewById(R.id.pager_ubah_harga);
         ubahHarga = new TabSapiBetina();
         daftarHarga = new TabSapiJantan();
-
+        Bundle bundle=new Bundle();
+        bundle.putString("namaPeternak", namaPeternak);
+        ubahHarga.setArguments(bundle);
+        daftarHarga.setArguments(bundle);
         TabAdapter ubahHargaAdapter = new TabAdapter(getChildFragmentManager());
         ubahHargaAdapter.tambahFragment(daftarHarga, "Jantan");
         ubahHargaAdapter.tambahFragment(ubahHarga, "Betina");

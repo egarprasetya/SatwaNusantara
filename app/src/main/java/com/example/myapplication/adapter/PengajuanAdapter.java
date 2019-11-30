@@ -108,7 +108,7 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
                                 @Override
                                 public void onClick(View view) {
                                     Intent data = new Intent(context.getApplicationContext(), LihatDataSapi.class);
-                                    data.putExtra("NamaPeternak", model.getNamaPeternak());
+                                    data.putExtra("namaPeternak", model.getNamaPeternak());
                                     data.putExtra("jumlahSapi", model.getJumlahSapi());
                                     data.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.getApplicationContext().startActivity(data);
@@ -123,7 +123,7 @@ public class PengajuanAdapter extends RecyclerView.Adapter<PengajuanAdapter.MyVi
                                 @Override
                                 public void onClick(View view) {
                                     Intent data = new Intent(context.getApplicationContext(), MemasukkanDataSapi2.class);
-                                    data.putExtra("NamaPeternak", model.getNamaPeternak());
+                                    data.putExtra("namaPeternak", model.getNamaPeternak());
                                     data.putExtra("jumlahSapi", model.getJumlahSapi());
                                     data.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.getApplicationContext().startActivity(data);

@@ -38,7 +38,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -138,7 +140,6 @@ public class HalamanMasuk extends AppCompatActivity {
                 strPassword = password.getText().toString();
                 boolean bolehMasuk = true;
 
-                String emailValid = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
                 if (strEmail.isEmpty()) {
                     email.requestFocus();
@@ -156,7 +157,6 @@ public class HalamanMasuk extends AppCompatActivity {
                 }
 
                 if (bolehMasuk) {
-                    if (strEmail.matches(emailValid)) {
                         auth.signInWithEmailAndPassword(strEmail, strPassword).addOnCompleteListener(HalamanMasuk.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -187,7 +187,7 @@ public class HalamanMasuk extends AppCompatActivity {
                                 }
                             }
                         });
-                    }
+
                 }
             }
         });
@@ -297,6 +297,28 @@ public class HalamanMasuk extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), com.example.myapplication.view.HalamanDaftar.class));
             }
         });
+    }
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        auth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCredential:success");
+
+                            FirebaseUser user = task.getResult().getUser();
+                            // ...
+                        } else {
+                            // Sign in failed, display a message and update the UI
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                // The verification code entered was invalid
+                            }
+                        }
+                    }
+                });
     }
 
     private void cekLevel(String level) {

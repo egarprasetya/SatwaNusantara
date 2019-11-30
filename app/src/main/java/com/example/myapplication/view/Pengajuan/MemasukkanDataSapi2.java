@@ -195,6 +195,10 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (jumlahSapi1 >nomorSapi1)
+                {
+
+
                 if (true) {
 
                 }
@@ -252,6 +256,11 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
 
                         }
                     });
+                }
+            }
+                else {
+                    Toast.makeText(getApplicationContext(), "Data Sapi Berhasil Dimasukan", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MemasukkanDataSapi2.this, LihatPengajuan.class));
                 }
             }
         });

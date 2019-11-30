@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.myapplication.R;
+import com.example.myapplication.view.HalamanDaftarTelepon;
 import com.example.myapplication.view.HalamanMasuk;
 import com.example.myapplication.view.Pengajuan.MemasukanDataSapi;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -78,7 +79,7 @@ public class HomePerusahaan extends AppCompatActivity {
         builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(getApplicationContext(), HalamanMasuk.class));
+//                startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
                 HomePerusahaan.this.finish();
             }
         });

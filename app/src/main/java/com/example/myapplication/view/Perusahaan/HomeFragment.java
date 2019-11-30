@@ -48,6 +48,7 @@ public class HomeFragment extends Fragment {
     private String uid;
     private FirebaseDatabase database;
     private DatabaseReference reference;
+    DeskripsiFragment deskripsi;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -66,7 +67,7 @@ public class HomeFragment extends Fragment {
         nama = view.findViewById(R.id.infopoin_nama);
         jumlahSapi = view.findViewById(R.id.infopoin_poin);
         database = FirebaseDatabase.getInstance();
-
+        final String[] namaPeternak = new String[1];
 
         reference = database.getReference("dataPengajuan");
         reference.addValueEventListener(new ValueEventListener() {
@@ -77,7 +78,7 @@ public class HomeFragment extends Fragment {
                     ModelPengajuan model = dataSnapshot1.getValue(ModelPengajuan.class);
                     if(model.getUsername()!=null){
                         if(model.getUsername().equalsIgnoreCase(emailUser)){
-
+                            namaPeternak[0] = model.getNamaPeternak();
                             nama.setText(model.getNamaPeternak());
                             jumlahSapi.setText(model.getJumlahSapi());
                         }}
@@ -96,7 +97,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.container_perusahaan, new DeskripsiFragment());
+                ft.replace(R.id.container_perusahaan, new DeskripsiFragment(namaPeternak[0]));
                 ft.commit();
             }
         });

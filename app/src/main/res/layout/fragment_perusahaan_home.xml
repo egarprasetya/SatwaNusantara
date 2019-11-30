@@ -111,15 +111,15 @@ o   <com.google.android.material.appbar.AppBarLayout
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/iklan" />
+                    android:src="@drawable/ilustrasi-ternak-sapi-min" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Jagalah kelestarian bumi kita"
+                    android:text="''Solusi Digital Untuk Meningkatkan Komoditas Ternak''"
                     android:textAlignment="center"
                     android:textColor="@color/warnaUtama"
                     android:textSize="20sp" />

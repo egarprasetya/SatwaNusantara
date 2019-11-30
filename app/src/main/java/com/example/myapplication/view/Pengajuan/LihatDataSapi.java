@@ -16,20 +16,29 @@ public class LihatDataSapi extends AppCompatActivity
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    private TabSapiBetina ubahHarga;
-    private TabSapiJantan daftarHarga;
+    private TabSapiBetina tabSapiBetina;
+    private TabSapiJantan tabSapiJantan;
+    String namaPengajuan;
+    String jumlahSapi;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_perusahaan_ubah_harga);
         tabLayout = findViewById(R.id.tab_ubah_harga);
         viewPager = findViewById(R.id.pager_ubah_harga);
-        ubahHarga = new TabSapiBetina();
-        daftarHarga = new TabSapiJantan();
+        tabSapiBetina = new TabSapiBetina();
+        tabSapiJantan = new TabSapiJantan();
+        namaPengajuan = getIntent().getStringExtra("namaPeternak");
+        jumlahSapi = getIntent().getStringExtra("jumlahSapi");
+        Bundle bundle=new Bundle();
+        bundle.putString("namaPeternak", namaPengajuan);
+        bundle.putString("jumlahSapi", jumlahSapi);
+        tabSapiBetina.setArguments(bundle);
+        tabSapiJantan.setArguments(bundle);
 
         TabAdapter ubahHargaAdapter = new TabAdapter(getSupportFragmentManager());
-        ubahHargaAdapter.tambahFragment(daftarHarga, "Jantan");
-        ubahHargaAdapter.tambahFragment(ubahHarga, "Betina");
+        ubahHargaAdapter.tambahFragment(tabSapiJantan, "Jantan");
+        ubahHargaAdapter.tambahFragment(tabSapiBetina, "Betina");
 
         viewPager.setAdapter(ubahHargaAdapter);
         tabLayout.setupWithViewPager(viewPager);

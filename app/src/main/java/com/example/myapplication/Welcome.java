@@ -18,6 +18,7 @@ import com.example.myapplication.model.ModelPengajuan;
 import com.example.myapplication.model.Pengguna;
 import com.example.myapplication.util.Util;
 import com.example.myapplication.view.BankSampah.HomeBankSampah;
+import com.example.myapplication.view.HalamanDaftarTelepon;
 import com.example.myapplication.view.HalamanMasuk;
 import com.example.myapplication.view.Mitra.HomeMitra;
 import com.example.myapplication.view.Pengajuan.HomePengajuan;
@@ -60,7 +61,7 @@ public class Welcome extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         dbRef = FirebaseDatabase.getInstance().getReference();
-
+        startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -77,7 +78,7 @@ public class Welcome extends AppCompatActivity {
                         } else {
                             if (!Util.get_internet(getApplicationContext())) {
                                 Toast.makeText(Welcome.this, "Tidak ada koneksi internet", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getApplicationContext(),HalamanMasuk.class));
+                                startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
 //                                startActivity(new Intent(getApplicationContext(),coba.class));
                             } else {
                                 if (user != null) {
@@ -86,6 +87,7 @@ public class Welcome extends AppCompatActivity {
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                             for (DataSnapshot child : dataSnapshot.getChildren()) {
                                                 Pengguna pen = child.getValue(Pengguna.class);
+                                                System.out.println("cek cek"+ pen.getLevel());
                                                 cekLevel(pen.getLevel());
                                             }
                                         }
@@ -94,11 +96,13 @@ public class Welcome extends AppCompatActivity {
                                         public void onCancelled(@NonNull DatabaseError databaseError) {
                                             Toast.makeText(Welcome.this, "Gagal Login / Sesi Berakhir", Toast.LENGTH_LONG).show();
                                             Log.w(TAG, "Login ERROR : " + databaseError.getDetails());
-                                            startActivity(new Intent(getApplicationContext(), HalamanMasuk.class));
+                                            startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
+
                                         }
                                     });
                                 } else {
-                                    startActivity(new Intent(getApplicationContext(), HalamanMasuk.class));
+                                    startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
+
                                 }
                             }
 
@@ -128,7 +132,8 @@ public class Welcome extends AppCompatActivity {
                 startActivity(new Intent(Welcome.this, HomeMitra.class));
                 break;
             case Pengguna.PERUSAHAAN:
-//                startActivity(new Intent(Welcome.this, HomePerusahaa.class));
+//                startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
+                startActivity(new Intent(Welcome.this, HomePerusahaan.class));
                 break;
             case Pengguna.PENGAJUAN:
                 startActivity(new Intent(Welcome.this, HomePerusahaan.class));
