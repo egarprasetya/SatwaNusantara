@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_perusahaan_home, container, false);
         auth = FirebaseAuth.getInstance();
         uid = auth.getCurrentUser().getUid();
-        emailUser=auth.getCurrentUser().getEmail();
+        emailUser=auth.getCurrentUser().getPhoneNumber();
         nama = view.findViewById(R.id.infopoin_nama);
         jumlahSapi = view.findViewById(R.id.infopoin_poin);
         database = FirebaseDatabase.getInstance();

@@ -2,7 +2,6 @@ package com.example.myapplication.view.Perusahaan;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -50,7 +48,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
@@ -85,11 +82,7 @@ public class EditDataPribadi extends Fragment {
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private List<ModelPengajuan> modelList;
-
-    StorageReference mStorageRef;
     public ModelPengajuan model2;
-    static final int PICK_IMAGE_REQUEST = 1;
-    Uri mImageUri;
 
     public EditDataPribadi() {
 
@@ -102,10 +95,10 @@ public class EditDataPribadi extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         uid = auth.getCurrentUser().getUid();
-        emailUser = auth.getCurrentUser().getEmail();
+        emailUser = auth.getCurrentUser().getPhoneNumber();
         dbRef = FirebaseDatabase.getInstance().getReference();
         database = FirebaseDatabase.getInstance();
-        mStorageRef = FirebaseStorage.getInstance().getReference();
+
         namaPeternak1 = view.findViewById(R.id.input_pengajuan_namaPeternak);
         username1 = view.findViewById(R.id.input_pengajuan_username);
         alamat1 = view.findViewById(R.id.input_pengajuan_alamat);
@@ -117,6 +110,7 @@ public class EditDataPribadi extends Fragment {
         tambah = view.findViewById(R.id.btn_submit_sapi);
 
         reference = database.getReference("dataPengajuan");
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -145,7 +139,16 @@ public class EditDataPribadi extends Fragment {
 
             }
         });
-
+//        buka_kamera = view.findViewById(R.id.upload_pengajuan_fotoKtp);
+//        buka_kamera.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.M)
+//            @Override
+//            public void onClick(View v) {
+//                cekIzin();
+//                startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE);
+//
+//            }
+//        });
 
         dbRef.child("pengguna").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -161,14 +164,17 @@ public class EditDataPribadi extends Fragment {
             }
         });
 
-        fotoKtp.setOnClickListener(new View.OnClickListener()
-        {
+        fotoKtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openFileChooser();
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL);
+                    startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE);
+                } else {
+                    startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE);
+                }
             }
         });
-
 
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,32 +249,25 @@ public class EditDataPribadi extends Fragment {
                 final String formattedDate = df.format(c);
 
                 if (kirim) {
-                    final StorageReference fileReference = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(mImageUri));
-                    UploadTask uploadFoto = fileReference.putFile(mImageUri);
-                    Task<Uri> uploading = uploadFoto
-                            .continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
-                            {
-                                @Override
-                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
-                                {
-                                    if (!task.isSuccessful())
-                                    {
-                                        Log.w(TAG, "Gagal upload foto ktp:" + task.getException());
-                                    }
-                                    return fileReference.getDownloadUrl();
-                                }
-                            })
-                            .addOnCompleteListener(new OnCompleteListener<Uri>()
-                            {
-                                @Override
-                                public void onComplete(@NonNull Task<Uri> task)
-                                {
-                                    if (task.isSuccessful())
-                                    {
-                                        String urlDownload = task.getResult().toString();
+                    final StorageReference ref = FirebaseStorage.getInstance().getReference(BaseApi.DIR_FOTO_PENGAJUAN).child(uriFoto.getLastPathSegment());
 
+                    UploadTask uploadFoto = ref.putFile(uriFoto);
 
-                                        dbRef.child("dataPengajuan").child(idPengajuan).child("namaPeternak").setValue(strNamaPeternak);
+                    Task<Uri> uploading = uploadFoto.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()) {
+                                Log.w(TAG, "Gagal upload foto ktp:" + task.getException());
+                            }
+                            return ref.getDownloadUrl();
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                String urlDownload = task.getResult().toString();
+
+                                dbRef.child("dataPengajuan").child(idPengajuan).child("namaPeternak").setValue(strNamaPeternak);
                                 dbRef.child("dataPengajuan").child(idPengajuan).child("username").setValue(strUsername);
                                 dbRef.child("dataPengajuan").child(idPengajuan).child("alamat").setValue(strAlamat);
                                 dbRef.child("dataPengajuan").child(idPengajuan).child("noKtp").setValue(strNoKtp);
@@ -312,30 +311,50 @@ public class EditDataPribadi extends Fragment {
         return view;
     }
 
-    void openFileChooser()
-    {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null)
-        {
-            mImageUri = data.getData();
-            Picasso.with(getContext()).load(mImageUri).into(fotoKtp);
+    private void cekIzin() {
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL);
         }
     }
 
-    public String getFileExtension(Uri uri)
-    {
-        ContentResolver cR = getActivity().getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            hasilFoto = (Bitmap) data.getExtras().get("data");
+            uriFoto = getImageUri(getContext(), hasilFoto);
+
+            fotoKtp.setImageBitmap(hasilFoto);
+        } else {
+            uriFoto = null;
+        }
+    }
+
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+
+        return Uri.parse(path);
+    }
+
+    private void kirimStorage(final StorageReference storageReference, Uri uri, final String namaVoucher, final String deskripsi, final String hargaPoin, final String jumlahKuota, final String uid, final String key) {
+        storageReference.putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                if (task.isSuccessful()) {
+                    String url = storageReference.getDownloadUrl().toString();
+                    Log.d("TabBuatVoucherFragment", "URL foto ModelVoucher: " + url);
+
+                    ModelVoucher voucher = new ModelVoucher(uid, namaMitra, url, namaVoucher, deskripsi, hargaPoin, jumlahKuota, ModelVoucher.VOUCHER_BERLAKU);
+                    dbRef.child("dataVoucher").child(key).setValue(voucher);
+                } else {
+                    Log.w("TabBuatVoucherFragment", "Gagal Upload Foto" + task.getException());
+                    Toast.makeText(getContext(), "Gagal Upload Foto", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
     @Override

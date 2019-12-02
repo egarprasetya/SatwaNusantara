@@ -249,7 +249,7 @@ public class HalamanDaftarTelepon extends AppCompatActivity {
                             dbRef.child("pengguna").child(uid).push().setValue(daftar);
 
                             ModelPengajuan dataPengajuan = new ModelPengajuan("", strNama, email, "", "", "",
-                                    "", "", "");
+                                    "", email, "");
                             final DatabaseReference pushId = dbRef.child("dataPengajuan");
                             pushId.push().setValue(dataPengajuan);
 

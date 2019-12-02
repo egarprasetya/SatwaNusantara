@@ -86,9 +86,9 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         uid = auth.getCurrentUser().getUid();
         dbRef = FirebaseDatabase.getInstance().getReference();
-        emailUser = auth.getCurrentUser().getEmail();
+        emailUser = auth.getCurrentUser().getPhoneNumber();
 
-        namaPeternak1 = getIntent().getStringExtra("NamaPeternak");
+        namaPeternak1 = getIntent().getStringExtra("namaPeternak");
         jumlahSapi1 = Integer.valueOf(getIntent().getStringExtra("jumlahSapi"));
 
         switchCompat = findViewById(R.id.input_pengajuan_jenis_kelamin);
@@ -105,10 +105,12 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChildren()) {
+                    nomorSapi1=0;
                     for (DataSnapshot perData : dataSnapshot.getChildren()) {
                         if (perData.getValue(ModelDataSapi.class).getNamaPeternak().equalsIgnoreCase(namaPeternak1)) {
-                            nomorSapi1++;
-                            nomorSapi.setText("" + nomorSapi1);
+                            nomorSapi1+=1;
+                            System.out.println(nomorSapi1 + "lalalala");
+                            nomorSapi.setText(""+nomorSapi1);
                         }
                     }
                 }
@@ -119,7 +121,11 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
 
             }
         });
-
+        if(nomorSapi1==1) {
+//            nomorSapi1++;
+            System.out.println(nomorSapi1 + "lalalala");
+            nomorSapi.setText("" + nomorSapi1);
+        }
         namaPeternak.setText(namaPeternak1);
         jumlahSapi.setText("" + jumlahSapi1);
 
@@ -195,19 +201,14 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
         tambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (jumlahSapi1 >nomorSapi1)
+                if (jumlahSapi1 >= nomorSapi1)
                 {
 
 
-                if (true) {
-
-                }
                 final String strNamaPeternak = namaPeternak.getText().toString().trim();
 
                 final String strJumlahSapi = jumlahSapi.getText().toString().trim();
                 final String strNoHp = nomorSapi.getText().toString().trim();
-
-
                 boolean kirim = false;
 
                 if (strNamaPeternak.isEmpty()) {
@@ -217,10 +218,6 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
                 } else {
                     kirim = true;
                 }
-
-
-
-
                 if (strJumlahSapi.isEmpty()) {
                     jumlahSapi.requestFocus();
                     jumlahSapi.setError("Isi terlebih dahulu");
@@ -242,6 +239,7 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
                 final String formattedDate = df.format(c);
 
                 if (kirim) {
+                    if (jumlahSapi1-1== nomorSapi1){
                     ModelDataSapi dataSapi = new ModelDataSapi(
                             beratSapi.getText().toString(),
                             jenisSapi1,
@@ -253,14 +251,31 @@ public class MemasukkanDataSapi2 extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(getApplicationContext(), "Data Sapi Ditambah", Toast.LENGTH_LONG).show();
-
+                            System.out.println("berhasil lag");
+                            startActivity(new Intent(MemasukkanDataSapi2.this, HomePengajuan.class));
                         }
                     });
+                    }
+                    else{
+                        ModelDataSapi dataSapi = new ModelDataSapi(
+                                beratSapi.getText().toString(),
+                                jenisSapi1,
+                                jenisKelamin1,
+                                namaPeternak1,
+                                String.valueOf(nomorSapi1)
+                        );
+                        dbRef.child("dataSapi").push().setValue(dataSapi).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Data Sapi Ditambah", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
                 }
             }
                 else {
                     Toast.makeText(getApplicationContext(), "Data Sapi Berhasil Dimasukan", Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(MemasukkanDataSapi2.this, LihatPengajuan.class));
+                    startActivity(new Intent(MemasukkanDataSapi2.this, HomePengajuan.class));
                 }
             }
         });

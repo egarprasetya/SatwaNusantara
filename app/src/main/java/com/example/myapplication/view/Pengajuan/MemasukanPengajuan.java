@@ -3,7 +3,6 @@ package com.example.myapplication.view.Pengajuan;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,7 +16,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -54,8 +52,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.squareup.picasso.Picasso;
-
 import static android.app.Activity.RESULT_OK;
 import static com.example.myapplication.util.Util.REQUEST_IMAGE_CAPTURE;
 import static com.example.myapplication.util.Util.WRITE_EXTERNAL;
@@ -67,7 +63,7 @@ public class MemasukanPengajuan extends Fragment {
     private EditText namaPeternak, username, alamat, noKtp, jumlahSapi, noHp;
     private ImageView fotoKtp;
     private Button tambah, batal;
-    Uri mImageUri;
+
     private FirebaseAuth auth;
     private FirebaseUser user;
     private DatabaseReference dbRef;
@@ -76,9 +72,7 @@ public class MemasukanPengajuan extends Fragment {
     private Uri uriFoto;
     private String uid;
     private String namaMitra;
-    StorageReference mStorageRef;
     ImageView fotoMakanan;
-    static final int PICK_IMAGE_REQUEST = 1;
 
     public MemasukanPengajuan() {
 
@@ -92,6 +86,7 @@ public class MemasukanPengajuan extends Fragment {
         auth = FirebaseAuth.getInstance();
         uid = auth.getCurrentUser().getUid();
         dbRef = FirebaseDatabase.getInstance().getReference();
+
         namaPeternak = view.findViewById(R.id.input_pengajuan_namaPeternak);
         username = view.findViewById(R.id.input_pengajuan_username);
         alamat = view.findViewById(R.id.input_pengajuan_alamat);
@@ -101,17 +96,28 @@ public class MemasukanPengajuan extends Fragment {
 
         fotoMakanan = view.findViewById(R.id.foto_pengajuan_fotoKtp);
 
+//        fotoKtp = view.findViewById(R.id.foto_pengajuan_fotoKtp);
+
         batal = view.findViewById(R.id.btn_voucher_batal);
         tambah = view.findViewById(R.id.btn_submit_sapi);
 
-
-        fotoMakanan.setOnClickListener(new View.OnClickListener()
-        {
+        buka_kamera = view.findViewById(R.id.upload_pengajuan_fotoKtp);
+        buka_kamera.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                openFileChooser();
+                cekIzin();
+                startActivityForResult(new Intent(MediaStore.ACTION_IMAGE_CAPTURE), REQUEST_IMAGE_CAPTURE);
+
             }
         });
+//        fotoMakanan.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v) {
+//                openFileChooser();
+//            }
+//        });
 
         dbRef.child("pengguna").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -204,31 +210,34 @@ public class MemasukanPengajuan extends Fragment {
                 final String formattedDate = df.format(c);
 
                 if (kirim) {
-                    final StorageReference fileReference = mStorageRef.child(System.currentTimeMillis() + "." + getFileExtension(mImageUri));
-                    UploadTask uploadFoto = fileReference.putFile(mImageUri);
-                    Task<Uri> uploading = uploadFoto
-                            .continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>()
-                            {
-                                @Override
-                                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception
-                                {
-                                    if (!task.isSuccessful())
-                                    {
-                                        Log.w(TAG, "Gagal upload foto ktp:" + task.getException());
-                                    }
-                                    return fileReference.getDownloadUrl();
-                                }
-                            })
-                            .addOnCompleteListener(new OnCompleteListener<Uri>()
-                            {
-                                @Override
-                                public void onComplete(@NonNull Task<Uri> task)
-                                {
-                                    if (task.isSuccessful())
-                                    {
-                                        String urlDownload = task.getResult().toString();
+                    final StorageReference ref = FirebaseStorage.getInstance().getReference(BaseApi.DIR_FOTO_PENGAJUAN).child(uriFoto.getLastPathSegment());
 
+                    UploadTask uploadFoto = ref.putFile(uriFoto);
 
+                    Task<Uri> uploading = uploadFoto.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()) {
+                                Log.w(TAG, "Gagal upload foto ktp:" + task.getException());
+                            }
+                            return ref.getDownloadUrl();
+                        }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                String urlDownload = task.getResult().toString();
+                                /*
+private String idPengajuan;
+    private String namaPeternak;
+    private String username;
+    private String alamat;
+    private String noKtp;
+    private String jumlahSapi;
+    private String urlFoto;
+    private String noHp;
+    private String tanggalPengajuan;
+* */
                                 ModelPengajuan pengajuan = new ModelPengajuan(uid, strNamaPeternak, strUsername, strAlamat, strNoKtp,  strJumlahSapi, urlDownload,strNoHp, formattedDate);
                                 dbRef.child("dataPengajuan").push().setValue(pengajuan);
                                 Toast.makeText(getContext(), "Berhasil", Toast.LENGTH_SHORT).show();
@@ -271,24 +280,42 @@ public class MemasukanPengajuan extends Fragment {
         }
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            hasilFoto = (Bitmap) data.getExtras().get("data");
+            uriFoto = getImageUri(getContext(), hasilFoto);
 
-    void openFileChooser()
-    {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+            fotoKtp.setImageBitmap(hasilFoto);
+        }
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null)
-        {
-            mImageUri = data.getData();
-            Picasso.with(getContext()).load(mImageUri).into(fotoMakanan);
-        }
+    public Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+
+        return Uri.parse(path);
+    }
+
+    private void kirimStorage(final StorageReference storageReference, Uri uri, final String namaVoucher, final String deskripsi, final String hargaPoin, final String jumlahKuota, final String uid, final String key) {
+        storageReference.putFile(uri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                if (task.isSuccessful()) {
+                    String url = storageReference.getDownloadUrl().toString();
+                    Log.d("TabBuatVoucherFragment", "URL foto ModelVoucher: " + url);
+
+                    ModelVoucher voucher = new ModelVoucher(uid, namaMitra, url, namaVoucher, deskripsi, hargaPoin, jumlahKuota, ModelVoucher.VOUCHER_BERLAKU);
+                    dbRef.child("dataVoucher").child(key).setValue(voucher);
+                } else {
+                    Log.w("TabBuatVoucherFragment", "Gagal Upload Foto" + task.getException());
+                    Toast.makeText(getContext(), "Gagal Upload Foto", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
     }
 
     @Override
@@ -305,11 +332,5 @@ public class MemasukanPengajuan extends Fragment {
                 }
             }
         }
-    }
-    public String getFileExtension(Uri uri)
-    {
-        ContentResolver cR = getActivity().getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 }

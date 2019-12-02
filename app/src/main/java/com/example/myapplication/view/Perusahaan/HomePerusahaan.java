@@ -79,7 +79,7 @@ public class HomePerusahaan extends AppCompatActivity {
         builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-//                startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
+                startActivity(new Intent(getApplicationContext(), HalamanDaftarTelepon.class));
                 HomePerusahaan.this.finish();
             }
         });

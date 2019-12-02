@@ -113,7 +113,7 @@ o   <com.google.android.material.appbar.AppBarLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ilustrasi-ternak-sapi-min" />
+                    android:src="@drawable/ilustrasi_ternak_sapi_min" />
 
                 <TextView
                     android:layout_width="match_parent"

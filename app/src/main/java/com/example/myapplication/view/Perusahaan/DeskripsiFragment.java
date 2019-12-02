@@ -22,12 +22,9 @@ public class DeskripsiFragment extends Fragment {
     private TabSapiBetina ubahHarga;
     private TabSapiJantan daftarHarga;
 
-    private FirebaseAuth firebaseAuth;
-    private FirebaseUser firebaseUser;
     String namaPeternak;
     public DeskripsiFragment(String nama) {
         namaPeternak = nama;
-
     }
     public DeskripsiFragment() {
 
